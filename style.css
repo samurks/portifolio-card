@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: hsl(217, 54%, 11%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: hsl(215, 51%, 70%);
+}
+
+.card {
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-image img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 255, 247, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.card-image:hover .overlay {
+  opacity: 1;
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 1.5em;
+  margin: 15px 0 10px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.card-title:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+.view-icon {
+  width: 1  0px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.card-image:hover .view-icon {
+  transform: scale(0.9);
+}
+
+.card-description {
+  font-size: 1em;
+  line-height: 1.5;
+  color: hsl(215, 32%, 70%);
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.card-price, .card-time {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.card-price img, .card-time img {
+  width: 15px;
+  margin-right: 5px;
+}
+
+.card-price span {
+  color: hsl(178, 100%, 50%);
+}
+
+.card-creator {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid hsl(215, 32%, 70%);
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.creator-avatar {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.card-creator a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-creator a:hover {
+  color: hsl(178, 100%, 50%);
+}
