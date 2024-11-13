@@ -7,18 +7,31 @@
 
 body {
   background-color: hsl(217, 54%, 11%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   color: hsl(215, 51%, 70%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .card {
   background-color: hsl(216, 50%, 16%);
   border-radius: 15px;
   padding: 20px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   text-align: left;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
 }
@@ -67,7 +80,7 @@ body {
 }
 
 .view-icon {
-  width: 1  0px;
+  width: 10px;
   height: auto;
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
@@ -127,4 +140,106 @@ body {
 
 .card-creator a:hover {
   color: hsl(178, 100%, 50%);
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.list-card {
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.list-card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.list-card-title {
+  color: #ffffff;
+  font-size: 1.25em;
+  margin: 10px 0;
+}
+
+.list-card-description {
+  color: hsl(215, 32%, 70%);
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .card-list {
+      grid-template-columns: 1fr;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: hsl(216, 50%, 16%);
+  border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links a {
+  color: hsl(215, 51%, 70%);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+@media (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+  }
+
+  .nav-links {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .nav-links a {
+      margin: 10px;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-list {
+      grid-template-columns: 1fr 1fr;
+  }
 }
